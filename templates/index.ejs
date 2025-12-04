@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="luflow, HFGE, Free Software, C++, Libre software, Engine, Game Engine, Graphics, 3D, 2D, Programming, Vulkan">
+    <meta name="description" content="This website is dedicated to free software primarily in the area of graphics engines but also free software in general.">
+    <link type="application/atom+xml" rel="alternate" title="luflow.net — Activity Feed" href="/feeds/blog.atom">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/elements.css">
+    <link rel="stylesheet" href="/static/css/item-preview.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/buttons.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <title>HFGE 3D engine, coding and free software | luflow.net</title>
+    </style>
+</head>
+<body>
+    <div id="content">
+
+        <%- include("./partials/header.ejs") %>
+
+        <main>
+            <%- include("./partials/index_featured_content.ejs") %>
+
+            <section class="discovery-box">
+                <h2>Screenshots</h2>
+                <p class="limit-width centered-block">A few early development screenshots of <a href="<%= hfgeURL %>" class="link-yellow">HFGE</a> in action.</p>
+                <div class="screenshots-box">
+                    <%
+                        screenshots.forEach((screenshot) => {
+                            echo(include('./partials/screenshot_preview.ejs', {
+                                screenshot: screenshot,
+                            }));
+                        });
+                    %>
+                </div>
+            </section>
+
+            <section class="centered-text">
+            <h2>Latest blog posts</h2>
+            <%
+                blogPosts.forEach((blogPost) => {
+                    echo(include('./partials/index_blog_posts.ejs', {
+                        blogPost: blogPost,
+                    }));
+                });
+            %>
+            <div class="action-box centered-text">
+            <a class="button-big" href="<%= blogOutputDir %>">ALL POSTS</a>
+            </div>
+            </section>
+        </main>
+
+        <%- include("./partials/footer.ejs") %>
+
+    </div>
+
+    <%- include("./partials/script_core.ejs") %>
+    <script>
+        // make menu item active visually:
+        let menuItem = document.getElementById("Home");
+        if (menuItem)
+        {
+            menuItem.classList.add("menu-item-active");
+        }
+    </script>
+
+</body>
+</html>
+

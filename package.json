@@ -1,0 +1,22 @@
+{
+  "name": "flow-static-web",
+  "version": "0.1.0",
+  "description": "luflow.net static web site generator.",
+  "keywords": [
+    "static",
+    "website",
+    "generator"
+  ],
+  "license": "AGPL-3.0-or-later",
+  "author": "Andreas Widen",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "feed": "^5.1.0",
+    "showdown": "^2.1.0"
+  }
+}

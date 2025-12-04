@@ -1,0 +1,21 @@
+luflow.net static web site generator
+Maintainer:  Andreas Widen <aw@luflow.net>
+License: GNU AGPL-3.0 or later (see LICENSE for details)
+URL: https://www.luflow.net
+
+Authors
+=======
+
+Andreas Widen <aw@luflow.net>
+
+
+Other authors
+=============
+
+The static generator uses the following Node.js packages:
+- ejs (Embedded JavaScript templates) is available under Apache-2.0 license and
+  available at: https://github.com/mde/ejs
+- Showdown is available under MIT license and available at:
+  https://github.com/showdownjs/showdown
+- feed is available under MIT license and available at:
+  https://github.com/jpmonette/feed

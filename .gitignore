@@ -1,0 +1,8 @@
+# node related folders:
+node_modules
+
+# vscode:
+.vscode
+
+# generated output folder:
+output

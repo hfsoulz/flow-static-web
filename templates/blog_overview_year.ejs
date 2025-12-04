@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="luflow Blog, year, <%= year %>">
+    <meta name="description" content="Blog posts published in the year: <%= year %>">
+    <link type="application/atom+xml" rel="alternate" title="luflow.net — Activity Feed" href="<%= feeds[0].url %>">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/item-preview.css">
+    <link rel="stylesheet" href="/static/css/buttons.css">
+    <link rel="stylesheet" href="/static/css/breadcrumbs.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/page.css">
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <title>Blog posts by year: <%= year %> Page <%= currentPage %> | luflow.net</title>
+    </style>
+</head>
+<body>
+    <div id="content">
+
+        <%- include("./partials/header.ejs") %>
+
+        <%- include("./partials/blog_overview_year_breadcrumbs.ejs") %>
+
+        <main>
+            <section class="page-post centered-text">
+                <h2>Blog posts by year: <%= year %> <span class="page-number-indicator"> (Page <%= currentPage %> of <%= numPages %>)</span></h2>
+                <div class="sheet">
+                    <%
+                        blogPosts.forEach((blogPost) => {
+                            echo(include('./partials/blog_item_preview.ejs', {
+                                blogPost: blogPost,
+                            }));
+                        });
+                    %>
+
+                    <nav class="page-selector">
+                        <h3 class="a11y-offset">Page <%= currentPage %> of <%= numPages %>. Go to another page: </h3>
+                        <%
+                            for (let i = 1; i <= numPages; ++i) {
+                                const pageURL = `${baseDir}/year/${year}/page/${i}/`;
+                                let buttonClass = 'button-little';
+                                if (i === currentPage) {
+                                    buttonClass = 'button-little button-little-active';
+                                }
+                                echo(include('./partials/blog_overview_page_selector.ejs', {
+                                    pageURL: pageURL,
+                                    buttonClass: buttonClass,
+                                    pageNumber: i,
+                                }));
+                            }
+                        %>
+                    </nav>
+                </div>
+
+                <section class="side-bar">
+                    <h3 class="a11y-offset">Blog menu: </h3>
+                    <ul class="bar-list">
+                    <%
+                        if (feeds.length > 0) {
+                            const sidebarHeader = 'Get blog updates';
+                            echo(include('./partials/blog_overview_sidebar_header.ejs', {
+                                sidebarHeader: sidebarHeader,
+                            }));
+
+                            feeds.forEach((feed) => {
+                                echo(include('./partials/blog_overview_sidebar_feeds.ejs', {
+                                    feed: feed,
+                                }));
+                            });
+                        }
+                    %>
+                    </ul>
+
+                    <ul class="bar-list">
+                    <%
+                        if (topics.length > 0) {
+                            const sidebarHeader = 'Posts by topic';
+                            echo(include('./partials/blog_overview_sidebar_header.ejs', {
+                                sidebarHeader: sidebarHeader,
+                            }));
+
+                            topics.forEach((topic) => {
+                                echo(include('./partials/blog_overview_sidebar_topics.ejs', {
+                                    topic: topic,
+                                }));
+                            });
+                        }
+                    %>
+                    </ul>
+
+                    <ul class="bar-list">
+                    <%
+                        if (years.length > 0) {
+                            const sidebarHeader = 'Posts by Year';
+                            echo(include('./partials/blog_overview_sidebar_header.ejs', {
+                                sidebarHeader: sidebarHeader,
+                            }));
+
+                            years.forEach((year) => {
+                                echo(include('./partials/blog_overview_sidebar_years.ejs', {
+                                    year: year,
+                                }));
+                            });
+                        }
+                    %>
+                    </ul>
+                </section>
+            </section>
+        </main>
+
+        <%- include("./partials/footer.ejs") %>
+
+    </div>
+
+    <%- include("./partials/script_core.ejs") %>
+    <script>
+        // make menu item active visually:
+        let menuItem = document.getElementById("Blog");
+        if (menuItem)
+        {
+            menuItem.classList.add("menu-item-active");
+        }
+    </script>
+
+</body>
+</html>
+
+
+

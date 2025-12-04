@@ -1,0 +1,42 @@
+screenshotsTitle: HFGE Screenshots
+screenshotsURL: /projects/hfge/screenshots
+
+title: HFGE Example: Basic 2D
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_1.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_1.png
+url: /projects/hfge/screenshot/basic-2d
+
+title: HFGE Example: Basic 3D (minimal convex hull in green)
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_2.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_2.png
+url: /projects/hfge/screenshot/basic-3d
+
+title: HFGE Example: glTF skinning
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_3.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_3.png
+url: /projects/hfge/screenshot/gltf-skinning
+
+title: HFGE Example: Deferred rendering
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_4.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_4.png
+url: /projects/hfge/screenshot/deferred-rendering
+
+title: HFGE Example: Morphing animation
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_5.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_5.png
+url: /projects/hfge/screenshot/morphing-animation
+
+title: HFGE Example: Skinning animation (with blending)
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_6.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_6.png
+url: /projects/hfge/screenshot/skinning-animation-with-blending
+
+title: HFGE Example: Collision 3D
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_7.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_7.png
+url: /projects/hfge/screenshot/collision-3d
+
+title: HFGE Example: Collision 2D
+imageMin: /static/media/screenshots/hfge/hfge_screenshot_min_8.png
+imageBig: /static/media/screenshots/hfge/hfge_screenshot_big_8.png
+url: /projects/hfge/screenshot/collision-2d

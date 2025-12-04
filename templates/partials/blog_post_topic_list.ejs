@@ -1,0 +1,14 @@
+<div class="topic-list" lang="en">
+                    <p>Related topics:</p>
+                    <%
+                        for (let i = 0; i < topics.length; ++i) {
+                            const topicSanitizedURL = `${baseDir}/${topicBaseDir}/${topicsSanitized[i]}/`;
+                            echo(include('./blog_topic.ejs', {
+                                topic: topics[i],
+                                topicSanitized: topicsSanitized[i],
+                                topicSanitizedURL: topicSanitizedURL,
+                            }));
+                        }
+                    %>
+                </div>
+
