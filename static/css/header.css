@@ -3,6 +3,7 @@
 
 header {
     position: sticky;
+    transition: transform 0.25s ease-in-out;
     top: 0;
     width: 100%;
     min-height: 66px;
@@ -16,6 +17,14 @@ header {
     align-items: center;
     font-size: 0.9em;
     z-index: 1000;
+}
+
+.nav-up {
+    transform: translateY(-100px);
+}
+
+.nav-down {
+    transform: translateY(0px);
 }
 
 .branding:link,
